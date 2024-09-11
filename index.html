@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Room homepage</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <img src="images/logo.svg" alt="Logo" />
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <figure id="slide_container">
+        <div class="iteems">
+          <div class="img"></div>
+          <div class="des">
+            <h1>Discover innovative ways to decorate</h1>
+            <p>
+              We provide unmatched quality, comfort, and style for property
+              owners across the country. Our experts combine form and function
+              in bringing your vision to life.
+            </p>
+            <div class="shop">
+              <a href="#">Shop now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="iteems">
+          <div class="img"></div>
+          <div class="des">
+            <h1>We are available all across the globe</h1>
+            <p>
+              With stores all over the world, it's easy for you to find
+              furniture for your home or place of business. Locally, we’re in
+              most major cities throughout the country.
+            </p>
+            <div class="shop">
+              <a href="#">Shop now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="iteems">
+          <div class="img"></div>
+          <div class="des">
+            <h1>Manufactured with the best materials</h1>
+            <p>
+              Our modern furniture store provides a high level of quality. Our
+              company has invested in advanced technology to ensure that every
+              product is made as perfect as possible.
+            </p>
+            <div class="shop">
+              <a href="#">Shop now</a>
+            </div>
+          </div>
+        </div>
+      </figure>
+
+      <!-- Navigation Buttons -->
+      <div class="slider-buttons">
+        <button id="prevBtn"></button>
+        <button id="nextBtn"></button>
+      </div>
+    </div>
+    <section class="about">
+      <div class="img">
+        <img src="images/image-about-dark.jpg" alt="" />
+      </div>
+      <div class="des">
+        <h1>About our furniture</h1>
+        <p>
+          Our multifunctional collection blends design and function to suit your
+          individual taste. Make each room unique, or pick a cohesive theme that
+          best express your interests and what inspires you. Find the furniture
+          pieces you need, from traditional to contemporary styles or anything
+          in between. Product specialists are available to help you create your
+          dream space.
+        </p>
+      </div>
+      <div class="img">
+        <img src="images/image-about-light.jpg" alt="" />
+      </div>
+    </section>
+    <script>
+      let currentIndex = 0;
+      const slides = document.querySelectorAll(".iteems"); 
+      const totalSlides = slides.length; 
+      const slideContainer = document.getElementById("slide_container");
+
+      
+      function showSlide(index) {
+        if (index >= totalSlides) {
+          currentIndex = 0; 
+        } else if (index < 0) {
+          currentIndex = totalSlides - 1; 
+        } else {
+          currentIndex = index;
+        }
+        const offset = -currentIndex * 33.369; 
+        slideContainer.style.transform = `translateX(${offset}%)`;
+      }
+
+      
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        showSlide(currentIndex + 1); 
+      });
+
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        showSlide(currentIndex - 1); 
+      });
+
+      
+      showSlide(currentIndex);
+    </script>
+  </body>
+</html>

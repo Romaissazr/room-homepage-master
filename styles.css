@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 14px;
+  cursor: default;
+}
+header {
+  z-index: 9999;
+  position: fixed;
+}
+nav {
+  display: flex;
+  gap: 30px;
+  padding: 50px;
+  z-index: 999;
+}
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+}
+nav ul li a:hover::after {
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 20px;
+  background: white;
+  border-radius: 50px;
+  top: 20px;
+  left: 20%;
+}
+.container {
+  z-index: -99;
+}
+#slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+#slide_container {
+  z-index: -99;
+  display: flex;
+  transition: transform 1s ease-in-out;
+  width: 300%; /* Adjust width based on the number of slides */
+}
+
+.iteems {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img {
+  z-index: -999;
+
+  height: 400px;
+  margin: 0;
+  overflow: hidden;
+}
+.iteems:nth-child(1) .img {
+  background-image: url(images/desktop-image-hero-1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 97.7%;
+}
+.iteems:nth-child(2) .img {
+  background-image: url(images/desktop-image-hero-2.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 98%;
+}
+.iteems:nth-child(3) .img {
+  background-image: url(images/desktop-image-hero-3.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 99%;
+}
+
+.des {
+  padding: 40px 50px;
+  width: 60%;
+}
+
+.des h1 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  margin-right: 150px;
+  margin-top: -50px;
+}
+
+.des p {
+  color: #7e7e7e;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  margin-right: 50px;
+}
+
+.shop a {
+  margin-top: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.shop a::after {
+  content: "";
+  width: 70px;
+  height: 12px;
+  background: transparent;
+  background-image: url(images/icon-arrow.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0px;
+  left: 160px;
+}
+.slider-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.slider-buttons button {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  padding: 30px 38px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.slider-buttons button:hover {
+  background-color: hsl(0, 0%, 27%);
+}
+
+.slider-buttons button:nth-child(1) {
+  background-image: url(images/icon-angle-left.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  bottom: 0px;
+  left: 60%;
+}
+
+.slider-buttons button:nth-child(2) {
+  background-image: url(images/icon-angle-right.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  position: absolute;
+  bottom: 0px;
+  left: 65%;
+}
+.about {
+  position: fixed;
+  display: flex;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.about .img {
+  width: 45%;
+  height: 233px;
+  overflow: hidden;
+  margin: 0;
+}
+.about .des {
+  margin-top: 30px;
+}
+.about .des h1 {
+  margin-right: -50px;
+  margin-left: -30px;
+}
+.about .des p {
+  margin: 0 -50px 0 -30px;
+}
